@@ -8,8 +8,8 @@ namespace LibreriaOperatoreTelefonico
 {
     public enum Valuta
     {
-        euro, //€
-        sterlina, //£
-        dollaro //$
+        Euro, //€
+        Sterlina, //£
+        Dollaro //$
     }
 }

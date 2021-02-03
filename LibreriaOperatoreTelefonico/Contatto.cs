@@ -19,7 +19,6 @@ namespace LibreriaOperatoreTelefonico
             if (numeroTelefono.ToString().Length < 10)
                 throw new Exception("Numero di telefono inserito troppo corto!\nDeve contenere esattamente 10 caratteri!");
             else if (numeroTelefono.ToString().Length > 10)
-
                 throw new Exception("Numero di telefono inserito troppo lungo!\nDeve contenere esattamente 10 caratteri!");
             else
                 NumeroTelefono = numeroTelefono;
