@@ -23,5 +23,10 @@ namespace LibreriaOperatoreTelefonico
             else
                 NumeroTelefono = numeroTelefono;
         }
+
+        public override string ToString()
+        {
+            return $"{Nome} {Cognome} {NumeroTelefono}";
+        }
     }
 }

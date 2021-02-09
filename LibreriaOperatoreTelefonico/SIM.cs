@@ -8,6 +8,7 @@ namespace LibreriaOperatoreTelefonico
 {
     public class SIM
     {
+        public static int Seriale { get; private set; } = 100230;
         public long NumeroTelefono { get; private set; }
         public int NumeroSeriale { get; private set; }
         public double Credito { get; set; }
@@ -24,12 +25,8 @@ namespace LibreriaOperatoreTelefonico
                 NumeroTelefono = numeroTelefono;
             Credito = credito;
             Valuta = valuta;
-            if (Operatore.Istanza.SIM[0] == null)
-                NumeroSeriale = 100020;
-            else
-            {
-                NumeroSeriale = Operatore.Istanza.SIM[Operatore.Istanza.SIM.Count - 1].NumeroSeriale + 1;
-            }
+            NumeroSeriale = Seriale + 1;
+            Seriale++;
         }
 
         public void AddTelefonata(Telefonata telefonata)
@@ -72,12 +69,7 @@ namespace LibreriaOperatoreTelefonico
 
         public string StampaTelefonate()
         {
-            string telefonate="";
-            foreach (Telefonata t in Telefonate)
-            {
-                telefonate += $"Telefonata a {t.Contatto.Nome} {t.Contatto.Cognome} in data {t.Data} per {t.Durata} minuti.\n";
-            }
-            return telefonate;
+            return Telefonate.OrderByDescending(t => t.Data).Select(t => t.ToString()).Aggregate((s1, s2) => s1 + "\n" + s2);
         }
     }
 }

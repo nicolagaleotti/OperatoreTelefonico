@@ -16,7 +16,7 @@ namespace ProvaOperatoreTelefonico
                 Console.WriteLine("Inserisci un numero di telefono (10 caratteri) : ");
                 long numero = long.Parse(Console.ReadLine());
                 SIM sim1 = new SIM(numero, 10, Valuta.Euro);
-                Console.WriteLine($"Numero seriale : {sim1.NumeroSeriale}");
+                Console.WriteLine(sim1.StampaSIM());
             } catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);

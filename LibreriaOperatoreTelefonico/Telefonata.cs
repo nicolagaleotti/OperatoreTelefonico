@@ -18,5 +18,10 @@ namespace LibreriaOperatoreTelefonico
             Durata = durata;
             Contatto = contatto;
         }
+
+        public override string ToString()
+        {
+            return $"{Data} {Durata} {Contatto}";
+        }
     }
 }
